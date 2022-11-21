@@ -35,7 +35,15 @@ export const DesktopNavigation = () => {
           />
         ))}
       </ul>
-      <div className="cta-container">
+      <div className={styles["cta-container"]}>
+        <div className={styles["feedback-container"]}>
+          <img src="/assets/images/feedback-icon.svg" alt="fedback icon" />
+        </div>
+        <div className={styles["language-container"]}>
+          <img src="/assets/images/lang-icon.svg" alt="globe icon" />
+          <span className={styles["selected-lang"]}>HR</span>
+          <span>EN</span>
+        </div>
         <button>Uclani se u udrugu</button>
       </div>
     </nav>

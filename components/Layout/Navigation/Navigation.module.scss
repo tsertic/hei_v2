@@ -4,6 +4,7 @@
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding: 3.2rem 1rem;
 }
@@ -31,5 +32,30 @@
   }
   .active {
     border-bottom: 2px solid $color-light;
+  }
+}
+
+.cta-container {
+  display: flex;
+
+  .language-container {
+    padding: 0 1.4rem;
+    margin: 0 1.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include linkFontLight;
+    border-left: 1px solid $color-primary-300;
+    span {
+      margin-left: 1rem;
+      cursor: pointer;
+    }
+    span:last-child {
+      padding-left: 1rem;
+      border-left: 1px solid $color-primary-300;
+    }
+    .selected-lang {
+      @include linkFontRegular;
+    }
   }
 }
