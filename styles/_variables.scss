@@ -1,0 +1,121 @@
+$color-primary-300: #355786;
+$color-primary-500: #152238;
+$color-primary-gradient: linear-gradient(180deg, #35578b 0%, #152238 100%);
+$color-secondary-300: #c3d6f3;
+$color-secondary-500: #88b5fa;
+$color-light: #fff;
+$color-dark: #000;
+$color-state-warning: #ff3650;
+$color-state-caution: #ffcc00;
+$color-state-success: #00cb90;
+$color-state-information: #4488ff;
+$color-state-link: #4488ff;
+
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+$font-size-h1: 4.8rem;
+$font-size-h2: 3.6rem;
+$font-size-h3: 2.4rem;
+$font-size-h4: 1.8rem;
+$font-size-md: 1.8rem;
+$font-size-sm: 1.4rem;
+
+$line-height-h1: 5.6rem;
+$line-height-h2: 4.4rem;
+$line-height-h3: 3rem;
+$line-height-h4: 2.2rem;
+$line-height-md: 2.2rem;
+$line-height-sm: 1.8rem;
+
+@mixin h1Font {
+  font-size: $font-size-h1;
+  line-height: $line-height-h1;
+  font-weight: $font-weight-medium;
+}
+
+@mixin h2Font {
+  font-size: $font-size-h2;
+  line-height: $line-height-h2;
+  font-weight: $font-weight-medium;
+}
+@mixin h3FontMedium {
+  font-size: $font-size-h3;
+  line-height: $line-height-h3;
+  font-weight: $font-weight-medium;
+}
+@mixin h3FontRegular {
+  font-size: $font-size-h3;
+  line-height: $line-height-h3;
+  font-weight: $font-weight-regular;
+}
+@mixin h4Font {
+  font-size: $font-size-h4;
+  line-height: $line-height-h4;
+  font-weight: $font-weight-medium;
+}
+@mixin bodyFontMedium {
+  font-size: $font-size-md;
+  line-height: $line-height-md;
+  font-weight: $font-weight-medium;
+}
+@mixin bodyFontBold {
+  font-size: $font-size-md;
+  line-height: $line-height-md;
+  font-weight: $font-weight-bold;
+}
+@mixin bodyFontRegular {
+  font-size: $font-size-md;
+  line-height: $line-height-md;
+  font-weight: $font-weight-regular;
+}
+@mixin linkFontRegular {
+  font-size: $font-size-md;
+  line-height: $line-height-md;
+  font-weight: $font-weight-regular;
+}
+@mixin linkFontLight {
+  font-size: $font-size-md;
+  line-height: $line-height-md;
+  font-weight: $font-weight-light;
+}
+@mixin inputFontLabel {
+  font-size: $font-size-md;
+  line-height: $line-height-md;
+  font-weight: $font-weight-medium;
+}
+@mixin inputFontValue {
+  font-size: $font-size-md;
+  line-height: $line-height-md;
+  font-weight: $font-weight-regular;
+}
+@mixin inputFontPlaceholder {
+  font-size: $font-size-md;
+  line-height: $line-height-md;
+  font-weight: $font-weight-light;
+}
+@mixin inputFonthelper {
+  font-size: $font-size-sm;
+  line-height: $line-height-sm;
+  font-weight: $font-weight-light;
+}
+
+@mixin buttonFontBold {
+  font-size: $font-size-md;
+  line-height: $line-height-md;
+  font-weight: $font-weight-bold;
+}
+
+@mixin buttonFontMedium {
+  font-size: $font-size-md;
+  line-height: $line-height-md;
+  font-weight: $font-weight-medium;
+}
+
+@mixin buttonFontRegular {
+  font-size: $font-size-md;
+  line-height: $line-height-md;
+  font-weight: $font-weight-regular;
+}

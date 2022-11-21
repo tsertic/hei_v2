@@ -1,0 +1,35 @@
+@import "./../../../styles/variables";
+
+.desktop-navigation {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 3.2rem 1rem;
+}
+
+.main-navigation {
+  display: flex;
+  gap: 3.2rem;
+  list-style: none;
+
+  .nav-item {
+    cursor: pointer;
+    padding-bottom: 0.4rem;
+    transition: 0.2s ease-in;
+    a {
+      display: inline-block;
+
+      @include linkFontRegular;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: $color-light;
+    }
+    &:hover {
+      border-bottom: 2px solid $color-light;
+    }
+  }
+  .active {
+    border-bottom: 2px solid $color-light;
+  }
+}
