@@ -1,4 +1,4 @@
-$color-primary-300: #355786;
+$color-primary-300: #35578b;
 $color-primary-500: #152238;
 $color-primary-gradient: linear-gradient(180deg, #35578b 0%, #152238 100%);
 $color-secondary-300: #c3d6f3;
@@ -30,6 +30,8 @@ $line-height-h4: 2.2rem;
 $line-height-md: 2.2rem;
 $line-height-sm: 1.8rem;
 
+$container-max-width: 120rem;
+$breakpoint-tablet: 872px;
 @mixin h1Font {
   font-size: $font-size-h1;
   line-height: $line-height-h1;
@@ -55,6 +57,11 @@ $line-height-sm: 1.8rem;
   font-size: $font-size-h4;
   line-height: $line-height-h4;
   font-weight: $font-weight-medium;
+}
+@mixin bodyFontSmRegular {
+  font-size: $font-size-sm;
+  line-height: $line-height-md;
+  font-weight: $font-weight-regular;
 }
 @mixin bodyFontMedium {
   font-size: $font-size-md;
@@ -118,4 +125,12 @@ $line-height-sm: 1.8rem;
   font-size: $font-size-md;
   line-height: $line-height-md;
   font-weight: $font-weight-regular;
+}
+
+@mixin pagePaddingDesktop {
+  padding-top: 18rem;
+}
+
+@mixin PagePaddingMobile {
+  padding: 12rem 2.4rem 1.3rem 2.4rem;
 }

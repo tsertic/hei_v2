@@ -1,0 +1,23 @@
+@import "./_variables.scss";
+
+.contact-container {
+  &--title {
+    @include h2Font;
+    text-transform: uppercase;
+    margin-bottom: 2.4rem;
+  }
+  @include PagePaddingMobile;
+}
+
+@media screen and (min-width: $breakpoint-tablet) {
+  .contact-container {
+    display: grid;
+
+    justify-content: center;
+    align-items: center;
+    &--title {
+      @include h1Font;
+      margin-bottom: 6.4rem;
+    }
+  }
+}

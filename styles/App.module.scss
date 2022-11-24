@@ -1,6 +1,12 @@
 @import "./variables";
 .app {
-  background-color: $color-primary-500;
+  background: linear-gradient(107.72deg, #152238 0.81%, #09111e 81.16%);
+
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
   color: $color-light;
+  .content {
+    flex: 1;
+  }
 }

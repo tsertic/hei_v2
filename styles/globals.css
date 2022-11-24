@@ -5,9 +5,15 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
 }
 
 html {
   font-size: 62.5%;
-  font-family: "Rubik", sans-serif;
+}
+input,
+select,
+textarea {
+  border: none;
+  outline: none;
 }

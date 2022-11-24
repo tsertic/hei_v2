@@ -1,0 +1,97 @@
+@import "./../../../styles/variables";
+
+.footer {
+  align-self: end;
+  width: 100%;
+  padding-bottom: 2rem;
+
+  color: $color-secondary-300;
+  p {
+    @include bodyFontSmRegular;
+  }
+  h4 {
+    @include h4Font;
+    text-transform: uppercase;
+    margin-bottom: 1.6rem;
+    color: $color-light;
+  }
+  &__logo {
+    display: none;
+  }
+  &__contact {
+    text-align: center;
+    &__social-icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    p {
+      margin-bottom: 1.6rem;
+    }
+    margin-bottom: 1.6rem;
+  }
+  &__other {
+    text-align: center;
+    &__links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1.6rem;
+      list-style: none;
+      .dot-decoration {
+        display: inline-block;
+        width: 0.4rem;
+        height: 0.4rem;
+        border-radius: 50%;
+        background: $color-secondary-300;
+        margin-left: 1rem;
+      }
+    }
+    a {
+      margin-left: 1rem;
+
+      @include bodyFontSmRegular;
+      color: $color-secondary-300;
+      text-decoration: none;
+    }
+  }
+}
+@media screen and (min-width: $breakpoint-tablet) {
+  .footer {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: $container-max-width;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    p {
+      @include bodyFontRegular;
+    }
+    a {
+      @include linkFontRegular;
+    }
+    &__logo {
+      position: absolute;
+      display: block;
+      left: 50%;
+      top: 50%;
+
+      transform: translate(-50%, -50%);
+    }
+    &__contact {
+      text-align: left;
+      &__social-icons {
+        justify-content: start;
+      }
+      p {
+        @include bodyFontRegular;
+      }
+    }
+    &__other {
+      text-align: right;
+    }
+  }
+}

@@ -1,0 +1,53 @@
+@import "./variables";
+
+.membership {
+  @include PagePaddingMobile;
+  &--title {
+    @include h2Font;
+    text-transform: uppercase;
+    margin-bottom: 2.4rem;
+  }
+  &__form {
+    width: 100%;
+    margin-bottom: 5rem;
+    div {
+      margin-bottom: 2.4rem;
+    }
+  }
+}
+.button-container {
+  text-align: center;
+}
+@media screen and (min-width: $breakpoint-tablet) {
+  .membership {
+    @include pagePaddingDesktop;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    &--title {
+      @include h1Font;
+      margin-bottom: 6.4rem;
+    }
+    &__form {
+      width: 80rem;
+      margin-bottom: 16rem;
+      div {
+        margin-bottom: 4rem;
+      }
+      .row-2 {
+        display: flex;
+        justify-content: space-between;
+        gap: 10%;
+        div {
+          flex: 1;
+        }
+      }
+      .row-1 {
+        div {
+          width: 45%;
+        }
+      }
+    }
+  }
+}

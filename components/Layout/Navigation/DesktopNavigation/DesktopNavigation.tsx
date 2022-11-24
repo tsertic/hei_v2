@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../../../UI/Button";
 import styles from "./../Navigation.module.scss";
 import NavigationItem from "./NavigationItem";
 const LINKDATA = [
@@ -44,7 +45,7 @@ export const DesktopNavigation = () => {
           <span className={styles["selected-lang"]}>HR</span>
           <span>EN</span>
         </div>
-        <button>Uclani se u udrugu</button>
+        <Button text="uclani se u udrugu" link="/membership" />
       </div>
     </nav>
   );

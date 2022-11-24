@@ -1,0 +1,82 @@
+@import "./../../styles/variables";
+
+.form-element {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
+  position: relative;
+  textarea {
+    min-height: 15rem;
+  }
+  &__label {
+    @include inputFontLabel;
+    text-transform: uppercase;
+    padding-left: 0.4rem;
+    margin-bottom: 1.6rem;
+  }
+  &__input {
+    position: relative;
+    option {
+      background-color: $color-primary-300;
+      outline: none;
+      cursor: pointer;
+      margin-bottom: 1rem;
+    }
+    @include inputFontValue;
+    background: transparent;
+    border-bottom: 0.3rem solid $color-primary-300;
+    padding: 0.4rem 0.4rem 0.8rem 0.4rem;
+    color: $color-light;
+    &:hover {
+      &::placeholder {
+        color: $color-secondary-300;
+        border-color: $color-light;
+      }
+    }
+    &:active {
+      border-color: $color-light;
+    }
+    &:focus {
+      border-color: $color-light;
+    }
+    &::placeholder {
+      @include inputFontPlaceholder;
+      color: $color-primary-300;
+    }
+  }
+  ::-webkit-calendar-picker-indicator {
+    opacity: 1;
+
+    background: url("./../../public/assets/images/calendar-date-s.svg");
+    z-index: 10;
+    cursor: pointer;
+    &:hover {
+      background: url("./../../public/assets/images/calendar-date-white.svg");
+    }
+  }
+
+  .default-value {
+    color: $color-primary-300;
+    &:focus {
+      color: $color-light;
+    }
+  }
+  &__input--error {
+    border-color: $color-state-warning;
+  }
+  &--error-message {
+    position: absolute;
+    bottom: -1.5rem;
+    left: 0.4rem;
+    color: $color-state-warning;
+    @include inputFonthelper;
+  }
+}
+
+@media screen and (min-width: $breakpoint-tablet) {
+  .form-element {
+    textarea {
+      min-height: 20rem;
+    }
+  }
+}
