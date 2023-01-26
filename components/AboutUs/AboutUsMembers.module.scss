@@ -1,0 +1,44 @@
+@import "./../../styles/variables";
+.aboutus-members {
+  display: flex;
+  flex-direction: row;
+  gap: 6rem;
+}
+
+.member-container {
+  flex: 1;
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.member-info {
+  margin: 2rem 0;
+  .name {
+    @include bodyFontRegular;
+    margin-bottom: 0.4rem;
+  }
+  .role {
+    @include bodyFontSmRegular;
+    color: $color-secondary-500;
+  }
+}
+
+@media screen and (max-width: $breakpoint-tablet) {
+  .aboutus-members {
+    flex-direction: column;
+  }
+  .member-container {
+    img {
+      height: 19rem;
+      object-position: 30% 70%;
+    }
+    .djerek-photo {
+      object-position: 30% 30%;
+    }
+    .rubido-photo {
+      object-position: 30% 10%;
+    }
+  }
+}

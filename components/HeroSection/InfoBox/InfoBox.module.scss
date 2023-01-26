@@ -1,0 +1,14 @@
+@import "./../../../styles/variables";
+
+.info-box {
+  max-width: 36rem;
+
+  h2 {
+    @include h3FontMedium;
+    color: $color-secondary-300;
+  }
+  p {
+    @include bodyFontMedium;
+    color: $color-primary-300;
+  }
+}

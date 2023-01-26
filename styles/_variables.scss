@@ -124,9 +124,13 @@ $breakpoint-tablet: 872px;
 @mixin buttonFontRegular {
   font-size: $font-size-md;
   line-height: $line-height-md;
-  font-weight: $font-weight-regular;
+  font-weight: $font-weight-light;
 }
-
+@mixin tagMobileFont {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-md;
+}
 @mixin pagePaddingDesktop {
   padding-top: 18rem;
 }

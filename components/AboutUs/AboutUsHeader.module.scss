@@ -1,0 +1,25 @@
+@import "./../../styles/variables";
+
+.aboutus-header {
+  h1 {
+    @include h1Font;
+    margin-bottom: 4rem;
+  }
+  p {
+    @include bodyFontRegular;
+    margin-bottom: 1.5rem;
+  }
+  margin-bottom: 10rem;
+}
+@media screen and (max-width: $breakpoint-tablet) {
+  .aboutus-header {
+    h1 {
+      @include h2Font;
+      margin-bottom: 1.5rem;
+    }
+    p {
+      @include bodyFontRegular;
+    }
+    margin-bottom: 2.5rem;
+  }
+}

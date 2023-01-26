@@ -1,11 +1,15 @@
 import React from "react";
 import Link from "next/link";
 import styles from "./../Navigation.module.scss";
+import { useRouter } from "next/router";
+
 const NavigationItem = ({ linkPath, text, active, onClick }: any) => {
+  const routePath = useRouter().asPath;
+
   return (
     <li
       className={`${styles["nav-item"]} ${
-        active && styles["nav-item--active"]
+        routePath === linkPath && styles["nav-item--active"]
       }`}
       onClick={onClick && onClick}
     >

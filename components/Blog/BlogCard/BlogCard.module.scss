@@ -1,0 +1,70 @@
+@import "./../../../styles/variables";
+.blog-card {
+  width: 100%;
+  border-bottom: 4px solid $color-primary-300;
+}
+.tag-container {
+  margin-bottom: 1.6rem;
+  @include tagMobileFont;
+
+  span:not(:first-child) {
+    margin-left: 0.8rem;
+  }
+}
+
+.img-container {
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+  margin-bottom: 1.2rem;
+}
+
+.blog-card__info {
+  .date {
+    @include inputFonthelper;
+    color: $color-primary-300;
+    margin-bottom: 0.8rem;
+  }
+  .title {
+    @include h4Font;
+    margin-bottom: 1.2rem;
+  }
+  .description {
+    @include bodyFontSmRegular;
+  }
+  .btn {
+    font-size: $font-size-sm;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+    text-align: right;
+    color: $color-light;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+}
+@media screen and (min-width: $breakpoint-tablet) {
+  .tag-container {
+    @include buttonFontBold;
+  }
+  .blog-card__info {
+    .date {
+      @include linkFontRegular;
+      text-decoration: underline;
+    }
+    .title {
+      @include h3FontRegular;
+    }
+    .description {
+      @include bodyFontRegular;
+    }
+    .btn {
+      font-size: $font-size-md;
+      margin-top: 1.6rem;
+    }
+  }
+}

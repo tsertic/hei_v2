@@ -1,0 +1,36 @@
+@import "./../../styles/variables";
+
+.search {
+  position: relative;
+  max-width: 40rem;
+  img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 1rem;
+  }
+  input {
+    @include inputFontValue;
+    color: $color-light;
+    width: 100%;
+    padding: 1.2rem 1.2rem 1.2rem 5.5rem;
+    background-color: transparent;
+    border: 2px solid $color-primary-300;
+    &:hover {
+      border-color: $color-light;
+      &::placeholder {
+        color: $color-secondary-300;
+      }
+    }
+    &:active {
+      border-color: $color-light;
+    }
+    &:focus {
+      border-color: $color-light;
+    }
+    &::placeholder {
+      @include inputFontPlaceholder;
+      color: $color-secondary-300;
+    }
+  }
+}

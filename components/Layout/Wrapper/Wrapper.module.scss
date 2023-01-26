@@ -1,0 +1,13 @@
+@import "./../../../styles/variables";
+.wrapper {
+  margin: 0 auto;
+  padding: 0 1rem;
+  margin-top: 15rem;
+  max-width: $container-max-width;
+}
+@media screen and (max-width: $breakpoint-tablet) {
+  .wrapper {
+    padding: 0 2rem;
+    margin-top: 10rem;
+  }
+}

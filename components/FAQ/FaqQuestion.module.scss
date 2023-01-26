@@ -1,0 +1,30 @@
+@import "./../../styles/variables";
+.faq-question {
+  border-bottom: 0.2rem solid $color-primary-300;
+  padding: 1rem;
+}
+.question {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 1rem;
+  cursor: pointer;
+  h3 {
+    @include h3FontMedium;
+  }
+  span {
+    font-size: $font-size-h3;
+  }
+}
+.answer {
+  transform: scaleY(0);
+  max-height: 0;
+  padding: 0 1rem;
+  transition: 0.7s all;
+  @include bodyFontRegular;
+}
+.show {
+  transform: scaleY(1);
+  max-height: 400px;
+  padding-bottom: 1rem;
+}

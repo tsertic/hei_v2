@@ -1,0 +1,9 @@
+POST http://localhost:3002/api/contact
+content-type: application/json
+
+{
+    "email": "tsertic5@gmail.com",
+    "message":"Hello from the other side HEIv2",
+    "name":"Toni",
+    "surname":"Sertic"   
+}

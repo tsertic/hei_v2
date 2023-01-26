@@ -1,6 +1,51 @@
 @import "./../../styles/variables";
 
 .hero-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   min-height: 100vh;
-  background: red;
+  background: $color-primary-500;
+  padding: 15rem 0 10rem 0;
+}
+.hero-section__logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  img {
+    width: 34rem;
+    height: 30rem;
+  }
+}
+.title {
+  @include h1Font;
+}
+.subtext {
+  text-align: center;
+  p {
+    @include bodyFontMedium;
+    margin-bottom: 5rem;
+  }
+}
+.info-1 {
+  position: absolute;
+  top: 10rem;
+  left: 10rem;
+}
+@media screen and (max-width: $breakpoint-tablet) {
+  .hero-section {
+    padding: 15rem 3rem 5rem 3rem;
+  }
+  .title {
+    text-align: center;
+    @include h3FontRegular;
+  }
+  .hero-section__logo {
+    img {
+      width: 16.8rem;
+      height: 14.8rem;
+    }
+  }
 }

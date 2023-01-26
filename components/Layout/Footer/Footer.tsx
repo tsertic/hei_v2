@@ -29,7 +29,7 @@ export const Footer = () => {
       <div className={styles["footer__other"]}>
         <ul className={styles["footer__other__links"]}>
           <li>
-            <a href="#">FAQ</a>
+            <a href="/faq">FAQ</a>
           </li>
           <span className={styles["dot-decoration"]}></span>
           <li>
