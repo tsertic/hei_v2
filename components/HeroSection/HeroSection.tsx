@@ -16,7 +16,7 @@ export const HeroSection = () => {
       </div>
       <div className={styles["subtext"]}>
         <p>Udruga sa ciljem poboljšanja e-sport scene u Hrvatskoj</p>
-        <Button text="Ciljevi" />
+        <Button text="Ciljevi" link="/aboutus#goals" />
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import { CILJEVI } from "./../../db/CILJEVI";
 export const OrganizationGoals = () => {
   return (
     <div className={styles["organization-goals"]}>
+      <div id="goals" className={styles["goals-anchor"]}></div>
       <h1>CILJEVI UDRUGE</h1>
       <ul className={styles["goals-list"]}>
         {CILJEVI.map((goal) => {

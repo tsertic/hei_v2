@@ -1,6 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
-import { transporter, mailOptions } from "./../../config/nodemailer";
+import { client } from "../../lib/sanity.client";
+
 type Data = {
   message: string;
 };
@@ -9,23 +10,33 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   console.log("req.body", req.body);
   if (req.method === "POST") {
     const data = req.body;
-    if (!data.name || !data.email || !data.message || !data.surname) {
-      return res.status(400).json({ message: "Bad Request22" });
+    if (
+      !data.name ||
+      !data.email ||
+      !data.message ||
+      !data.surname ||
+      !data.birthDate
+    ) {
+      return res.status(400).json({ message: "Bad Request22", success: false });
     }
+    const { name, surname, email, message, heardAbout, birthDate } = data;
     try {
-      await transporter.sendMail({
-        ...mailOptions,
-        subject: `Prijava za clanstvo od : ${data.name} ${data.surname} `,
-        text: `From: ${data.name} ${data.surname} Email: ${data.email} Message: ${data.message}`,
-        html: `<p>From: ${data.name} ${data.surname}</p><p>Email: ${data.email}</p><p>Message: ${data.message}</p>`,
+      await client.create({
+        _type: "registration",
+        name,
+        surname,
+        email,
+        birthDate,
+        heard_about_hei: heardAbout,
+        poruka: message,
       });
-      return res.status(200).json({ success: true });
+
+      return res.status(201).json({ success: true, message: "Success" });
     } catch (error: any) {
-      console.log(error);
-      return res.status(500).json({ message: error.message });
+      return res.status(500).json({ message: error.message, success: false });
     }
   }
-  res.status(400).json({ message: "Bad Request" });
+  res.status(400).json({ message: "Bad Request", success: false });
 };
 
 export default handler;

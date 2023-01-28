@@ -8,6 +8,7 @@ interface IFormElement {
   onValueChange: any;
   error: boolean;
   name: string;
+  size?: string;
 }
 export const FormElementText = ({
   label,
@@ -108,6 +109,7 @@ export const FormElementTextArea = ({
   errorMsg,
   onValueChange,
   name,
+  size = "normal",
 }: IFormElement) => {
   return (
     <div className={`${styles["form-element"]} `}>
@@ -118,8 +120,8 @@ export const FormElementTextArea = ({
         value={value}
         onChange={onValueChange}
         className={`${styles["form-element__input"]} ${
-          error && styles["form-element__input--error"]
-        }`}
+          size === "small" && styles["textarea-small"]
+        } ${error && styles["form-element__input--error"]}`}
       />
       {error && (
         <p className={styles["form-element--error-message"]}>{errorMsg}</p>

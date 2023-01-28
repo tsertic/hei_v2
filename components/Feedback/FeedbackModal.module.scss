@@ -1,0 +1,55 @@
+@import "./../../styles/variables";
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  z-index: 80;
+}
+.feedback-modal {
+  position: fixed;
+  max-width: 80rem;
+  z-index: 100;
+  top: 20%;
+  left: 50%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+  background-color: $color-primary-500;
+  border: 2px solid #fff;
+  padding: 4rem;
+  border-radius: 1rem;
+  box-shadow: 0 5px 10px rgba(255, 255, 255, 0.3);
+  form {
+    div {
+      margin-bottom: 2rem;
+    }
+  }
+}
+.title {
+  @include h3FontRegular;
+  margin-bottom: 1.6rem;
+}
+.description {
+  @include bodyFontSmRegular;
+  margin-bottom: 2rem;
+}
+.close {
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: $container-max-width) {
+  .feedback-modal {
+    width: 100%;
+    top: 20%;
+  }
+}

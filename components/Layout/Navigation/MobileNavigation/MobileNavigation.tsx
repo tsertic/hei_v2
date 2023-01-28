@@ -23,7 +23,7 @@ const LINKDATA = [
   },
   { id: 3, path: "/aboutus", text: "o nama", active: false },
 ];
-const MobileNavigation = () => {
+const MobileNavigation: React.FC<{ showModal: Function }> = ({ showModal }) => {
   const [isOpenNav, setIsOpenNav] = useState(false);
   const openNavHandler = () => {
     setIsOpenNav(true);
@@ -54,7 +54,15 @@ const MobileNavigation = () => {
               ))}
             </ul>
             <ul className={styles["mobile-navigation-list"]}>
-              <button className={styles["feedback-button"]}>FEEDBACK</button>
+              <button
+                className={styles["feedback-button"]}
+                onClick={() => {
+                  showModal();
+                  setIsOpenNav(false);
+                }}
+              >
+                FEEDBACK
+              </button>
               <NavigationItem
                 text="učlani se"
                 linkPath="/membership"

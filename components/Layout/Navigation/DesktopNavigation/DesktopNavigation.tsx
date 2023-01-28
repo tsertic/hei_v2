@@ -23,7 +23,9 @@ const LINKDATA = [
   },
   { id: 3, path: "/aboutus", text: "o nama", active: false },
 ];
-export const DesktopNavigation = () => {
+export const DesktopNavigation: React.FC<{ showModal: Function }> = ({
+  showModal,
+}) => {
   return (
     <nav className={styles["desktop-navigation"]}>
       <ul className={styles["main-navigation"]}>
@@ -37,7 +39,12 @@ export const DesktopNavigation = () => {
         ))}
       </ul>
       <div className={styles["cta-container"]}>
-        <div className={styles["feedback-container"]}>
+        <div
+          className={styles["feedback-container"]}
+          onClick={() => {
+            showModal();
+          }}
+        >
           <img src="/assets/images/feedback-icon.svg" alt="fedback icon" />
         </div>
         <div className={styles["language-container"]}>

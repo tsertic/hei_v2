@@ -1,0 +1,15 @@
+@import "./../../styles/variables";
+.form-response {
+  h2 {
+    @include h2Font;
+    margin-bottom: 3rem;
+  }
+  p {
+    margin-bottom: 8rem;
+    @include bodyFontRegular;
+  }
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+}

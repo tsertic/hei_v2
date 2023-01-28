@@ -1,1 +1,34 @@
 @import "./../../styles/variables";
+.goals-anchor {
+  position: absolute;
+  height: 0;
+  margin-top: -10rem;
+}
+.organization-goals {
+  position: relative;
+  margin: 3rem 0;
+  h1 {
+    @include h3FontMedium;
+    margin-bottom: 3rem;
+  }
+  h1,
+  .goals-list h3 {
+    color: $color-secondary-500;
+  }
+}
+
+.goals-list {
+  list-style: none;
+  li {
+    margin-bottom: 3rem;
+  }
+  h3,
+  p {
+    @include bodyFontRegular;
+    margin-bottom: 0.5rem;
+  }
+  h3 {
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+}

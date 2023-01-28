@@ -1,0 +1,11 @@
+//Registration POST route
+POST http://localhost:3333/api/registration
+Content-Type: application/json
+
+{
+    "name":"John",
+    "surname":"Doe",
+    "email":"john.doe@gmail.com",
+    "heardAbout":"Internet",
+    "message":"Zelim biti dio ove prekrasne udruge"
+}

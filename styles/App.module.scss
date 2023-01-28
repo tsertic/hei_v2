@@ -9,4 +9,9 @@
   .content {
     flex: 1;
   }
+  .sanity {
+    * {
+      font-size: 16px;
+    }
+  }
 }

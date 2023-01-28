@@ -8,6 +8,9 @@
   textarea {
     min-height: 15rem;
   }
+  .textarea-small {
+    min-height: 10rem;
+  }
   &__label {
     @include inputFontLabel;
     text-transform: uppercase;

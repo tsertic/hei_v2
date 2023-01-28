@@ -2,21 +2,16 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { client } from "../../lib/sanity.client";
 
-type Data = {
-  message: string;
-};
-
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === "POST") {
     const data = req.body;
-    if (!data.name || !data.email || !data.message || !data.surname) {
+    if (!data.email || !data.message) {
       return res.status(400).json({ message: "Bad Request22" });
     }
     try {
       await client.create({
-        _type: "contact",
-        name: data.name,
-        surname: data.surname,
+        _type: "feedback",
+
         email: data.email,
         poruka: data.message,
       });
