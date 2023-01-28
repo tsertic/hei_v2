@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { SocialIcon } from "../../UI/SocialIcon";
 import styles from "./Footer.module.scss";
@@ -29,16 +30,16 @@ export const Footer = () => {
       <div className={styles["footer__other"]}>
         <ul className={styles["footer__other__links"]}>
           <li>
-            <a href="/faq">FAQ</a>
+            <Link href="/faq">FAQ</Link>
           </li>
           <span className={styles["dot-decoration"]}></span>
           <li>
-            <a href="#">Privacy policy</a>
+            <Link href="/privacy-policy">Privacy policy</Link>
           </li>
-          <span className={styles["dot-decoration"]}></span>
+          {/* <span className={styles["dot-decoration"]}></span>
           <li>
             <a href="#">Terms and conditions</a>
-          </li>
+          </li> */}
         </ul>
         <p>© 2021 Hrvatska Esport Inicijativa</p>
       </div>

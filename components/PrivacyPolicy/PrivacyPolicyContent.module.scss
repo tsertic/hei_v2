@@ -1,0 +1,25 @@
+@import "./../../styles/variables";
+.privacy-policy {
+  h1 {
+    @include h1Font;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+  h2 {
+    @include h2Font;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  p,
+  li {
+    @include bodyFontRegular;
+  }
+  ul {
+    padding-left: 3rem;
+  }
+  a {
+    text-decoration: none;
+    color: $color-secondary-500;
+  }
+  margin-bottom: 4rem;
+}
