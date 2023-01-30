@@ -2,31 +2,40 @@ import React from "react";
 import styles from "./BlogCard.module.scss";
 import Link from "next/link";
 import Image from "next/image";
-export const BlogCard = () => {
+import { client, urlFor } from "../../../lib/sanity.client";
+//TODO types for sanity objects and data
+export const BlogCard: React.FC<{ blogData: any }> = ({ blogData }) => {
+  const {
+    previewText,
+    mainImage,
+    publishedAt,
+    categories,
+    body,
+    author,
+    title,
+    slug,
+  } = blogData;
+  const tags = categories.map((tag: any) => tag.title);
   return (
     <div className={styles["blog-card"]}>
       <div className={styles["tag-container"]}>
-        <span>#tag1</span>
-        <span>#tag2</span>
+        {tags.map((tag: any) => (
+          <span id={tag}>#{tag}</span>
+        ))}
       </div>
       <div className={styles["img-container"]}>
         <Image
           width={560}
           height={280}
-          src="/assets/images/test-blog-image.png"
+          src={urlFor(mainImage).url()}
           alt="blog related"
         />
       </div>
       <div className={styles["blog-card__info"]}>
         <p className={styles["date"]}>05th November,2021</p>
-        <h1 className={styles["title"]}>LOREM IPSUM DOLOR SIT</h1>
-        <p className={styles["description"]}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
-        </p>
-        <Link href="/blog/p1" className={styles["btn"]}>
+        <h1 className={styles["title"]}>{title}</h1>
+        <p className={styles["description"]}>{previewText}</p>
+        <Link href={`/blog/${slug.current}`} className={styles["btn"]}>
           Vidi Više {">"}
         </Link>
       </div>
