@@ -36,7 +36,9 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       return res.status(500).json({ message: error.message, success: false });
     }
   }
-  res.status(400).json({ message: "Bad Request", success: false });
+  if (req.method !== "POST") {
+    res.status(400).json({ success: false, message: "Bad Request" });
+  }
 };
 
 export default handler;
