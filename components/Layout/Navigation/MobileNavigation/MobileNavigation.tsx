@@ -47,6 +47,7 @@ const MobileNavigation: React.FC<{ showModal: Function }> = ({ showModal }) => {
             <ul className={styles["mobile-navigation-list"]}>
               {LINKDATA.map((linkItem) => (
                 <NavigationItem
+                  key={linkItem.id}
                   onClick={closeNavHandler}
                   linkPath={linkItem.path}
                   text={linkItem.text}

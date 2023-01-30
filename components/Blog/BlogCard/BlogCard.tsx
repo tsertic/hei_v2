@@ -20,7 +20,9 @@ export const BlogCard: React.FC<{ blogData: any }> = ({ blogData }) => {
     <div className={styles["blog-card"]}>
       <div className={styles["tag-container"]}>
         {tags.map((tag: any) => (
-          <span id={tag}>#{tag}</span>
+          <span key={tag} id={tag}>
+            #{tag}
+          </span>
         ))}
       </div>
       <div className={styles["img-container"]}>

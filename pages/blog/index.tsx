@@ -3,6 +3,7 @@ import { BlogCard } from "../../components/Blog/BlogCard/BlogCard";
 import { Search } from "../../components/UI/Search";
 import { client, urlFor } from "../../lib/sanity.client";
 import styles from "./../../styles/Blog.module.scss";
+//TODO add types for post
 const Blog: React.FC<{ posts: any }> = ({ posts }) => {
   console.log(posts);
   if (!posts || posts.length === 0) {
@@ -17,7 +18,10 @@ const Blog: React.FC<{ posts: any }> = ({ posts }) => {
       <div className={styles["blog__list"]}>
         {posts.map((post: any) => {
           return (
-            <div className={styles["blog__list--item"]}>
+            <div
+              key={Math.random().toString()}
+              className={styles["blog__list--item"]}
+            >
               <BlogCard blogData={post} />
             </div>
           );

@@ -1,7 +1,7 @@
 import { YtPreview } from "../components/sanity-schema/youtube";
-
+import { defineField, defineType } from "sanity";
 // youtube.js
-export default {
+export default defineField({
   name: "youtube",
   type: "object",
   title: "YouTube Embed",
@@ -17,7 +17,4 @@ export default {
       url: "url",
     },
   },
-  components: {
-    preview: YtPreview,
-  },
-};
+});
