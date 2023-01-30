@@ -16,6 +16,11 @@ export const BlogCard: React.FC<{ blogData: any }> = ({ blogData }) => {
     slug,
   } = blogData;
   const tags = categories.map((tag: any) => tag.title);
+  const formatedDate = new Date(publishedAt).toLocaleDateString("en-us", {
+    day: "2-digit",
+    month: "long",
+    year: "numeric",
+  });
   return (
     <div className={styles["blog-card"]}>
       <div className={styles["tag-container"]}>
@@ -34,7 +39,7 @@ export const BlogCard: React.FC<{ blogData: any }> = ({ blogData }) => {
         />
       </div>
       <div className={styles["blog-card__info"]}>
-        <p className={styles["date"]}>05th November,2021</p>
+        <p className={styles["date"]}>{formatedDate}</p>
         <h1 className={styles["title"]}>{title}</h1>
         <p className={styles["description"]}>{previewText}</p>
         <Link href={`/blog/${slug.current}`} className={styles["btn"]}>
