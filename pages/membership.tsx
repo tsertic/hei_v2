@@ -68,13 +68,10 @@ const Membership = () => {
       newStateValue.value = value;
       return { ...prevValue, [name]: newStateValue };
     });
-    console.log(formState.name);
   };
   const handleSubmitForm = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(formState);
     if (formState.name.value == "") {
-      console.log("u form state name value");
       formState.name.error = true;
     }
     if (formState.surname.value === "") {
@@ -118,7 +115,6 @@ const Membership = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.success) {
           setFormState(initialFormState);
           setFormStep(1);

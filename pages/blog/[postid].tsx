@@ -6,8 +6,6 @@ import { Wrapper } from "../../components/Layout/Wrapper/Wrapper";
 import { client, urlFor } from "../../lib/sanity.client";
 //TODO post type interface
 const BlogPostPage: React.FC<{ post: any }> = ({ post }) => {
-  console.log(post);
-
   if (!post) {
     return (
       <Wrapper>
@@ -45,7 +43,6 @@ const BlogPostPage: React.FC<{ post: any }> = ({ post }) => {
 export default BlogPostPage;
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  console.log(context.params);
   if (!context.params) {
     return {
       props: {

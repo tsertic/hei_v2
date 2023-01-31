@@ -5,7 +5,6 @@ import { client, urlFor } from "../../lib/sanity.client";
 import styles from "./../../styles/Blog.module.scss";
 //TODO add types for post
 const Blog: React.FC<{ posts: any }> = ({ posts }) => {
-  console.log(posts);
   if (!posts || posts.length === 0) {
     return <div>Loading...</div>;
   }

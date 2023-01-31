@@ -39,7 +39,6 @@ export const ContactForm = () => {
 
   const textInputChangeHandler = (e: any) => {
     const { name, value } = e.target;
-    console.log(value.trim() !== "" && value !== "", "value trimano");
     const newStateValue = { value: "", error: false, errorMsg: "" };
     if (name === "email") {
       if (ValidateEmail(value)) {
@@ -62,13 +61,10 @@ export const ContactForm = () => {
       newStateValue.value = value;
       return { ...prevValue, [name]: newStateValue };
     });
-    console.log(formState);
   };
   const handleSubmitForm = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(formState);
     if (formState.name.value == "") {
-      console.log("u form state name value");
       formState.name.error = true;
     }
     if (formState.surname.value === "") {
@@ -111,7 +107,6 @@ export const ContactForm = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.success) {
           setFormState(initialFormState);
           setFormStep(1);

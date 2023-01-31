@@ -7,7 +7,6 @@ type Data = {
 };
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-  console.log("req.body", req.body);
   if (req.method === "POST") {
     const data = req.body;
     if (
