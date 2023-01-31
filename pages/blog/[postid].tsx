@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { GetStaticPaths, GetStaticProps } from "next/types";
 import React from "react";
 import { PostBody } from "../../components/Blog/BlogPost/PostBody";
@@ -16,7 +17,9 @@ const BlogPostPage: React.FC<{ post: any }> = ({ post }) => {
   const mainImage = urlFor(post.mainImage).url();
   const authorName = post.author.name;
   const title = post.title;
+
   const postBody = post.body;
+  const previewText = post.previewText;
   const tags = post.categories.map(
     (category: { title: any }) => category.title
   );
@@ -25,18 +28,28 @@ const BlogPostPage: React.FC<{ post: any }> = ({ post }) => {
     month: "long",
     year: "numeric",
   });
+  const headTitle = `HEI-${title}`;
   return (
-    <Wrapper>
-      {" "}
-      <PostHeader
-        title={title}
-        tags={tags}
-        date={readableDate}
-        author={authorName}
-        mainImage={mainImage}
-      />{" "}
-      <PostBody postBody={postBody} />
-    </Wrapper>
+    <>
+      <Head>
+        <title>{headTitle}</title>
+        <meta name="description" content={previewText} key="desc" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={previewText} />
+        <meta property="og:image" content={mainImage} />
+      </Head>
+      <Wrapper>
+        {" "}
+        <PostHeader
+          title={title}
+          tags={tags}
+          date={readableDate}
+          author={authorName}
+          mainImage={mainImage}
+        />{" "}
+        <PostBody postBody={postBody} />
+      </Wrapper>
+    </>
   );
 };
 
