@@ -8,7 +8,12 @@ interface ISocialIcon {
 }
 export const SocialIcon = ({ imgPath, linkPath, alt }: ISocialIcon) => {
   return (
-    <a href={linkPath} className={styles["social-icon"]}>
+    <a
+      href={linkPath}
+      className={styles["social-icon"]}
+      rel="noreferrer"
+      target="_blank"
+    >
       <Image src={imgPath} alt={alt} width={32} height={32} />
     </a>
   );

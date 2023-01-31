@@ -10,14 +10,14 @@ export const Footer = () => {
         <h4>kontakt:</h4>
         <p>info@esportinicijativa.hr</p>
         <div className={styles["footer__contact__social-icons"]}>
-          <SocialIcon
+          {/* <SocialIcon
             imgPath="/assets/images/Instagram-icon.svg"
             linkPath="#"
             alt="Instagram icon"
-          />
+          /> */}
           <SocialIcon
             imgPath="/assets/images/facebook-icon.svg"
-            linkPath="#"
+            linkPath="https://www.facebook.com/hrvatskaesportinicijativa"
             alt="facebook icon"
           />
         </div>

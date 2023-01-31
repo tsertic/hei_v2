@@ -11,6 +11,11 @@ export default defineField({
       type: "url",
       title: "YouTube video URL",
     },
+    {
+      name: "videoDesc",
+      type: "string",
+      title: "Opis Videa",
+    },
   ],
   preview: {
     select: {

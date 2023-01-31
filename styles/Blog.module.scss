@@ -12,28 +12,10 @@
     margin-bottom: 3rem;
   }
 }
-.blog__list {
-  width: 100%;
-  display: flex;
-
-  flex-wrap: wrap;
-
-  &--item {
-    width: 100%;
-    margin-bottom: 5rem;
-  }
-}
 @media screen and (min-width: $breakpoint-tablet) {
   .blog {
     @include pagePaddingDesktop;
     max-width: $container-max-width;
     margin: 0 auto;
-  }
-  .blog__list {
-    gap: 8%;
-    &--item {
-      width: 46%;
-      margin-bottom: 12.8rem;
-    }
   }
 }

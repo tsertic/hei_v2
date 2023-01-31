@@ -1,31 +1,48 @@
-import React from "react";
-import { BlogCard } from "../../components/Blog/BlogCard/BlogCard";
+import React, { useEffect, useState } from "react";
+import { BlogCardsList } from "../../components/Blog/BlogCard/BlogCardsList";
 import { Search } from "../../components/UI/Search";
-import { client, urlFor } from "../../lib/sanity.client";
+import { client } from "../../lib/sanity.client";
 import styles from "./../../styles/Blog.module.scss";
+type IPost = any;
 //TODO add types for post
-const Blog: React.FC<{ posts: any }> = ({ posts }) => {
-  if (!posts || posts.length === 0) {
+const Blog: React.FC<{ posts: IPost[] }> = ({ posts }) => {
+  const [filteredPosts, setFilteredPosts] = useState<IPost[]>();
+  const [filterValue, setFilterValue] = useState("");
+  if (!posts) {
     return <div>Loading...</div>;
   }
+  const filterChangeHandler = (e: any) => {
+    const value = e.target.value;
+
+    const filteredData = posts.filter((post) => {
+      const title = post.title.toLowerCase();
+      const lowerValue = value.toLowerCase();
+      if (title.includes(lowerValue)) {
+        return post;
+      }
+      const tagsList = post.categories;
+      for (const tag of tagsList) {
+        if (tag.title.toLowerCase().includes(lowerValue)) {
+          return post;
+        }
+      }
+    });
+
+    setFilterValue(value);
+    setFilteredPosts(filteredData);
+  };
+
   return (
     <div className={styles["blog"]}>
       <header className={styles["blog__header"]}>
         <h1 className={styles["blog--title"]}>Blog</h1>
-        <Search placeholder="Pretraga po naslovu ili tag-u" />
+        <Search
+          placeholder="Pretraga po naslovu ili tag-u"
+          value={filterValue}
+          changeHandler={filterChangeHandler}
+        />
       </header>
-      <div className={styles["blog__list"]}>
-        {posts.map((post: any) => {
-          return (
-            <div
-              key={Math.random().toString()}
-              className={styles["blog__list--item"]}
-            >
-              <BlogCard blogData={post} />
-            </div>
-          );
-        })}
-      </div>
+      <BlogCardsList posts={filteredPosts ? filteredPosts : posts} />
     </div>
   );
 };
@@ -46,6 +63,6 @@ export const getStaticProps = async () => {
     props: {
       posts: postListData,
     },
-    revalidate: 120,
+    revalidate: 3600,
   };
 };

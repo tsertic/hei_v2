@@ -21,7 +21,6 @@ export const BlogCard: React.FC<{ blogData: any }> = ({ blogData }) => {
     month: "long",
     year: "numeric",
   });
-  console.log(blogData);
   const blogCardImg = mainImage ? urlFor(mainImage).url() : "";
   return (
     <div className={styles["blog-card"]}>

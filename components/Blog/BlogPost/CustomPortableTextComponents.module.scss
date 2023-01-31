@@ -25,10 +25,18 @@
 .image {
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 2rem;
   img {
     width: 80%;
     max-height: 40rem;
     object-fit: contain;
+  }
+  p {
+    margin: 0.5rem 0;
+    @include bodyFontSmRegular;
+    color: $color-secondary-300;
   }
 }
 .title {
@@ -41,11 +49,58 @@
     color: darken($color-secondary-300, $amount: 20);
   }
 }
+.quote {
+  display: block;
+  margin-top: 4rem;
+  @include h3FontRegular;
+  padding-left: 3rem;
+  border-left: 2px solid $color-secondary-300;
+}
+.cite {
+  display: inline-block;
+  width: 100%;
+  text-align: right;
+  padding-right: 3rem;
+  @include bodyFontRegular;
+  color: $color-secondary-300;
+}
 .listBullet {
   list-style: disc;
   padding-left: 2rem;
   margin-bottom: 2rem;
   li {
     @include bodyFontRegular;
+    margin-bottom: 0.4rem;
+  }
+}
+
+/* YOUTUBE VIDEO */
+
+.yt {
+  width: 80%;
+  margin: 0 auto 2rem auto;
+  p {
+    margin: 0.5rem 0;
+    @include bodyFontSmRegular;
+    color: $color-secondary-300;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: $breakpoint-tablet) {
+  .yt {
+    width: 100%;
+  }
+  .image {
+    img {
+      width: 100%;
+    }
+  }
+  .quote {
+    margin-top: 3rem;
+    padding-left: 2rem;
+  }
+  .cite {
+    padding-right: 1rem;
   }
 }

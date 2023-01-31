@@ -19,6 +19,12 @@ export const CustomPortableTextComponents = {
     normal: ({ children }: any) => {
       return <p className={styles.p}>{children}</p>;
     },
+    blockquote: ({ children }: any) => {
+      return <blockquote className={styles.quote}>{children}</blockquote>;
+    },
+    cite: ({ children, value }: any) => {
+      return <cite className={styles.cite}>{children}</cite>;
+    },
   },
   list: {
     bullet: ({ children }: any) => {
@@ -26,18 +32,29 @@ export const CustomPortableTextComponents = {
     },
   },
   types: {
-    image: ({ value }: any) => (
-      <div className={styles.image}>
-        <Image
-          alt={"decorative image"}
-          src={urlFor(value).url()}
-          width={800}
-          height={400}
-        />
-      </div>
-    ),
+    image: ({ value }: any) => {
+      const imgDesc = value.imgDesc;
+      console.log(imgDesc);
+      return (
+        <div className={styles.image}>
+          <Image
+            alt={imgDesc ? imgDesc : "Decorative image related to article"}
+            src={urlFor(value).url()}
+            width={800}
+            height={400}
+          />
+          {imgDesc && <p>{imgDesc}</p>}
+        </div>
+      );
+    },
     youtube: ({ value }: any) => {
-      return <YtPreview url={value.url} />;
+      const videoDesc = value.videoDesc;
+      return (
+        <div className={styles.yt}>
+          <YtPreview url={value.url} />
+          {videoDesc && <p>{videoDesc}</p>}
+        </div>
+      );
     },
   },
 
