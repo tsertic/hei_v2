@@ -41,12 +41,11 @@ export const getStaticProps = async () => {
       author->
     }
   `);
-  const urlImate = urlFor(postListData[0].mainImage).url();
 
   return {
     props: {
       posts: postListData,
     },
-    revalidate: 12000,
+    revalidate: 120,
   };
 };
