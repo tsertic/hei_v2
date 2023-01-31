@@ -7,7 +7,6 @@ import { Wrapper } from "../../components/Layout/Wrapper/Wrapper";
 import { client, urlFor } from "../../lib/sanity.client";
 //TODO post type interface
 const BlogPostPage: React.FC<{ post: any }> = ({ post }) => {
-  console.log(post);
   if (!post) {
     return (
       <Wrapper>

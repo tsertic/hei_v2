@@ -34,7 +34,6 @@ export const CustomPortableTextComponents = {
   types: {
     image: ({ value }: any) => {
       const imgDesc = value.imgDesc;
-      console.log(imgDesc);
       return (
         <div className={styles.image}>
           <Image
