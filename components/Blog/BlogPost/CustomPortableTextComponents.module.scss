@@ -1,0 +1,51 @@
+@import "./../../../styles/variables";
+.h1,
+.h2,
+.h3,
+.h4,
+.secondary-color {
+  color: $color-secondary-300;
+}
+.h1 {
+  @include h1Font;
+  margin-bottom: 2rem;
+}
+.h2 {
+  @include h2Font;
+  margin-bottom: 1.5rem;
+}
+.h3 {
+  @include h3FontMedium;
+  margin-bottom: 1.4rem;
+}
+.p {
+  @include bodyFontRegular;
+  margin-bottom: 1.6rem;
+}
+.image {
+  display: flex;
+  justify-content: center;
+  img {
+    width: 80%;
+    max-height: 40rem;
+    object-fit: contain;
+  }
+}
+.title {
+  color: $color-secondary-500;
+}
+.link {
+  color: $color-secondary-300;
+  transition: 0.2s all;
+  &:hover {
+    color: darken($color-secondary-300, $amount: 20);
+  }
+}
+.listBullet {
+  list-style: disc;
+  padding-left: 2rem;
+  margin-bottom: 2rem;
+  li {
+    @include bodyFontRegular;
+  }
+}

@@ -1,8 +1,9 @@
 import { GetStaticPaths, GetStaticProps } from "next/types";
 import React from "react";
+import { PostBody } from "../../components/Blog/BlogPost/PostBody";
 import { PostHeader } from "../../components/Blog/BlogPost/PostHeader";
 import { Wrapper } from "../../components/Layout/Wrapper/Wrapper";
-import { client } from "../../lib/sanity.client";
+import { client, urlFor } from "../../lib/sanity.client";
 //TODO post type interface
 const BlogPostPage: React.FC<{ post: any }> = ({ post }) => {
   console.log(post);
@@ -14,8 +15,10 @@ const BlogPostPage: React.FC<{ post: any }> = ({ post }) => {
       </Wrapper>
     );
   }
+  const mainImage = urlFor(post.mainImage).url();
   const authorName = post.author.name;
   const title = post.title;
+  const postBody = post.body;
   const tags = post.categories.map(
     (category: { title: any }) => category.title
   );
@@ -24,7 +27,19 @@ const BlogPostPage: React.FC<{ post: any }> = ({ post }) => {
     month: "long",
     year: "numeric",
   });
-  return <Wrapper>{/* <PostHeader /> */}</Wrapper>;
+  return (
+    <Wrapper>
+      {" "}
+      <PostHeader
+        title={title}
+        tags={tags}
+        date={readableDate}
+        author={authorName}
+        mainImage={mainImage}
+      />{" "}
+      <PostBody postBody={postBody} />
+    </Wrapper>
+  );
 };
 
 export default BlogPostPage;

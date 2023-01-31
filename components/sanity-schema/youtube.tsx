@@ -9,12 +9,7 @@ export const YtPreview = (props: any) => {
   }
   const id = getYouTubeId(url);
   if (!id) {
-    return;
+    return <div>Missing YouTube id,something went wrong!!</div>;
   }
-  return (
-    <div>
-      {renderDefault({ ...props })}
-      <LiteYouTubeEmbed title="" id={id} />
-    </div>
-  );
+  return <LiteYouTubeEmbed title="" id={id} />;
 };

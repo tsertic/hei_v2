@@ -1,1 +1,66 @@
 @import "./../../../styles/variables";
+
+.post-header {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 5rem;
+  a {
+    @include linkFontLight;
+    text-decoration: none;
+    color: $color-secondary-300;
+  }
+  h1 {
+    @include h1Font;
+  }
+}
+.tags {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  li {
+    @include bodyFontRegular;
+  }
+}
+.header-info {
+  @include bodyFontRegular;
+  display: flex;
+  gap: 1rem;
+  .author {
+    text-transform: uppercase;
+    color: $color-secondary-500;
+  }
+}
+
+.header-image {
+  margin-top: 2rem;
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: $breakpoint-tablet) {
+  .post-header {
+    gap: 1rem;
+    h1 {
+      @include h2Font;
+    }
+    a {
+      @include bodyFontSmRegular;
+    }
+  }
+  .tags {
+    li {
+      @include bodyFontSmRegular;
+    }
+  }
+  .header-info {
+    @include bodyFontSmRegular;
+  }
+  .header-image {
+    img {
+      height: 20rem;
+    }
+  }
+}

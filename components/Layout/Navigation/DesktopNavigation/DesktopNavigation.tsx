@@ -17,7 +17,7 @@ const LINKDATA = [
   },
   {
     id: 2,
-    path: "contact",
+    path: "/contact",
     text: "kontakt",
     active: false,
   },
