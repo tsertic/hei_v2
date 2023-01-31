@@ -10,6 +10,7 @@ import {
 import styles from "./../styles/Membership.module.scss";
 import { ValidateEmail } from "../utils/helperFunctions";
 import { FormResponse } from "../components/UI/FormResponse";
+import Head from "next/head";
 const initialFormState = {
   name: {
     value: "",
@@ -124,103 +125,108 @@ const Membership = () => {
       });
   };
   return (
-    <div className={styles["membership"]}>
-      <h1 className={styles["membership--title"]}>postani dio naše udruge</h1>
-      {formStep === 0 && (
-        <>
-          <form className={styles["membership__form"]}>
-            <div className={styles["row-2"]}>
-              <FormElementText
-                label="Ime"
-                placeholderText="Unesite svoje ime"
-                value={name.value}
-                name="name"
-                error={name.error}
-                errorMsg={name.errorMsg}
-                onValueChange={textInputChangeHandler}
-              />
-              <FormElementText
-                label="Prezime"
-                placeholderText="Unesite svoje prezime"
-                value={surname.value}
-                name="surname"
-                error={surname.error}
-                errorMsg={surname.errorMsg}
-                onValueChange={textInputChangeHandler}
-              />
-            </div>
-            <div className={styles["row-2"]}>
-              <FormElementDate
-                label="Datum rođenja"
-                placeholderText="Unesite svoju godinu rođenja"
-                value={birthDate.value}
-                name="birthDate"
-                error={birthDate.error}
-                errorMsg={birthDate.errorMsg}
-                onValueChange={textInputChangeHandler}
-              />
-              <FormElementEmail
-                label="EMAIL"
-                placeholderText="Unesite svoju email adresu"
-                value={email.value}
-                name="email"
-                error={email.error}
-                errorMsg={email.errorMsg}
-                onValueChange={textInputChangeHandler}
-              />
-            </div>
-            <div className={styles["row-1"]}>
-              <FormElementSelect
-                label="Kako ste čuli za HEI?"
-                placeholderText="Unesite svoje ime"
-                value={heardAbout.value}
-                name="heardAbout"
-                error={heardAbout.error}
-                errorMsg={heardAbout.errorMsg}
-                onValueChange={textInputChangeHandler}
-              />
-            </div>
+    <>
+      <Head>
+        <title>HEI - Clanstvo</title>
+      </Head>
+      <div className={styles["membership"]}>
+        <h1 className={styles["membership--title"]}>postani dio naše udruge</h1>
+        {formStep === 0 && (
+          <>
+            <form className={styles["membership__form"]}>
+              <div className={styles["row-2"]}>
+                <FormElementText
+                  label="Ime"
+                  placeholderText="Unesite svoje ime"
+                  value={name.value}
+                  name="name"
+                  error={name.error}
+                  errorMsg={name.errorMsg}
+                  onValueChange={textInputChangeHandler}
+                />
+                <FormElementText
+                  label="Prezime"
+                  placeholderText="Unesite svoje prezime"
+                  value={surname.value}
+                  name="surname"
+                  error={surname.error}
+                  errorMsg={surname.errorMsg}
+                  onValueChange={textInputChangeHandler}
+                />
+              </div>
+              <div className={styles["row-2"]}>
+                <FormElementDate
+                  label="Datum rođenja"
+                  placeholderText="Unesite svoju godinu rođenja"
+                  value={birthDate.value}
+                  name="birthDate"
+                  error={birthDate.error}
+                  errorMsg={birthDate.errorMsg}
+                  onValueChange={textInputChangeHandler}
+                />
+                <FormElementEmail
+                  label="EMAIL"
+                  placeholderText="Unesite svoju email adresu"
+                  value={email.value}
+                  name="email"
+                  error={email.error}
+                  errorMsg={email.errorMsg}
+                  onValueChange={textInputChangeHandler}
+                />
+              </div>
+              <div className={styles["row-1"]}>
+                <FormElementSelect
+                  label="Kako ste čuli za HEI?"
+                  placeholderText="Unesite svoje ime"
+                  value={heardAbout.value}
+                  name="heardAbout"
+                  error={heardAbout.error}
+                  errorMsg={heardAbout.errorMsg}
+                  onValueChange={textInputChangeHandler}
+                />
+              </div>
 
-            <FormElementTextArea
-              label="Poruka"
-              placeholderText="Napišite nam svoju poruku"
-              value={message.value}
-              name="message"
-              error={message.error}
-              errorMsg={message.errorMsg}
-              onValueChange={textInputChangeHandler}
-            />
-            <div className={styles["button-container"]}>
-              <Button
-                type="wide"
-                text="Pošalji Zahtjev"
-                onClick={handleSubmitForm}
+              <FormElementTextArea
+                label="Poruka"
+                placeholderText="Napišite nam svoju poruku"
+                value={message.value}
+                name="message"
+                error={message.error}
+                errorMsg={message.errorMsg}
+                onValueChange={textInputChangeHandler}
               />
-            </div>
-          </form>
-        </>
-      )}
-      {formStep === 1 && (
-        <FormResponse
-          status="Uspješna prijava"
-          description="Tvoj zahtjev je zaprimljen, potvrdu zajedno sa ostalim detaljima poslat ćemo ti na mail."
-          buttonText="posalji novi zahtjev"
-          buttonOnClick={() => {
-            setFormStep(0);
-          }}
-        />
-      )}
-      {formStep === 2 && (
-        <FormResponse
-          status="Nešto je pošlo po krivom"
-          description="Zahtjev nije proveden, pokušaj se prijaviti ponovno ili nas kontaktiraj direktno na mail info@esportinicijativa.hr"
-          buttonText="posalji novi zahtjev"
-          buttonOnClick={() => {
-            setFormStep(0);
-          }}
-        />
-      )}
-    </div>
+              <div className={styles["button-container"]}>
+                <Button
+                  type="wide"
+                  text="Pošalji Zahtjev"
+                  onClick={handleSubmitForm}
+                />
+              </div>
+            </form>
+          </>
+        )}
+        {formStep === 1 && (
+          <FormResponse
+            status="Uspješna prijava"
+            description="Tvoj zahtjev je zaprimljen, potvrdu zajedno sa ostalim detaljima poslat ćemo ti na mail."
+            buttonText="posalji novi zahtjev"
+            buttonOnClick={() => {
+              setFormStep(0);
+            }}
+          />
+        )}
+        {formStep === 2 && (
+          <FormResponse
+            status="Nešto je pošlo po krivom"
+            description="Zahtjev nije proveden, pokušaj se prijaviti ponovno ili nas kontaktiraj direktno na mail info@esportinicijativa.hr"
+            buttonText="posalji novi zahtjev"
+            buttonOnClick={() => {
+              setFormStep(0);
+            }}
+          />
+        )}
+      </div>
+    </>
   );
 };
 

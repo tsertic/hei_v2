@@ -1,3 +1,4 @@
+import Head from "next/head";
 import React from "react";
 import { AboutUsHeader } from "../components/AboutUs/AboutUsHeader";
 import { AboutUsMembers } from "../components/AboutUs/AboutUsMembers";
@@ -6,11 +7,16 @@ import { Wrapper } from "../components/Layout/Wrapper/Wrapper";
 
 const Aboutus = () => {
   return (
-    <Wrapper>
-      <AboutUsHeader />
-      <AboutUsMembers />
-      <OrganizationGoals />
-    </Wrapper>
+    <>
+      <Head>
+        <title>HEI-O Nama</title>
+      </Head>
+      <Wrapper>
+        <AboutUsHeader />
+        <AboutUsMembers />
+        <OrganizationGoals />
+      </Wrapper>
+    </>
   );
 };
 

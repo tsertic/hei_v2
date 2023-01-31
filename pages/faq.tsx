@@ -1,3 +1,4 @@
+import Head from "next/head";
 import React, { ReactElement, useState } from "react";
 import { FaqHeader } from "../components/FAQ/FaqHeader";
 import { FaqList } from "../components/FAQ/FaqList";
@@ -22,15 +23,20 @@ const Faq = () => {
     setFaqQuestions(filteredQuestions);
   };
   return (
-    <Wrapper>
-      <FaqHeader />
-      <Search
-        placeholder="Pretraga po sadrzaju"
-        changeHandler={searchHandler}
-        value={searchValue}
-      />
-      <FaqList questions={faqQuestions} />
-    </Wrapper>
+    <>
+      <Head>
+        <title>HEI - FAQ</title>
+      </Head>
+      <Wrapper>
+        <FaqHeader />
+        <Search
+          placeholder="Pretraga po sadrzaju"
+          changeHandler={searchHandler}
+          value={searchValue}
+        />
+        <FaqList questions={faqQuestions} />
+      </Wrapper>
+    </>
   );
 };
 

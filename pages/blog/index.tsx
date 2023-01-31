@@ -1,3 +1,4 @@
+import Head from "next/head";
 import React, { useEffect, useState } from "react";
 import { BlogCardsList } from "../../components/Blog/BlogCard/BlogCardsList";
 import { Search } from "../../components/UI/Search";
@@ -33,17 +34,22 @@ const Blog: React.FC<{ posts: IPost[] }> = ({ posts }) => {
   };
 
   return (
-    <div className={styles["blog"]}>
-      <header className={styles["blog__header"]}>
-        <h1 className={styles["blog--title"]}>Blog</h1>
-        <Search
-          placeholder="Pretraga po naslovu ili tag-u"
-          value={filterValue}
-          changeHandler={filterChangeHandler}
-        />
-      </header>
-      <BlogCardsList posts={filteredPosts ? filteredPosts : posts} />
-    </div>
+    <>
+      <Head>
+        <title>HEI - Blog</title>
+      </Head>
+      <div className={styles["blog"]}>
+        <header className={styles["blog__header"]}>
+          <h1 className={styles["blog--title"]}>Blog</h1>
+          <Search
+            placeholder="Pretraga po naslovu ili tag-u"
+            value={filterValue}
+            changeHandler={filterChangeHandler}
+          />
+        </header>
+        <BlogCardsList posts={filteredPosts ? filteredPosts : posts} />
+      </div>
+    </>
   );
 };
 
