@@ -38,7 +38,9 @@ const BlogPostPage: React.FC<{ post: any }> = ({ post }) => {
         <meta property="og:title" content={title} />
         <meta property="og:description" content={previewText} />
         <meta property="og:image" content={mainImage} />
-        <meta name="twitter:card" content="summary" />
+        <meta property="twitter:image" content={mainImage} />
+        <meta property="twitter:title " content={title} />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="https://esportinicijativa.hr" />
         <meta name="twitter:creator" content={authorName} />
       </Head>
