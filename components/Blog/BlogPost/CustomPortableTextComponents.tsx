@@ -47,7 +47,12 @@ export const CustomPortableTextComponents = {
         ? "noreferrer noopener"
         : undefined;
       return (
-        <a href={value.href} className={styles.link} rel={rel} target="_blank">
+        <a
+          href={value.href}
+          className={styles.link}
+          rel="noreferrer"
+          target="_blank"
+        >
           {children}
         </a>
       );

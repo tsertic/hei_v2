@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { SocialIcon } from "../../UI/SocialIcon";
@@ -22,9 +23,11 @@ export const Footer = () => {
         </div>
       </div>
       <div className={styles["footer__logo"]}>
-        <img
+        <Image
           src="/assets/images/footer-logo.png"
           alt="Hrvatska e-sport inicijativa logo"
+          width={130}
+          height={120}
         />
       </div>
       <div className={styles["footer__other"]}>

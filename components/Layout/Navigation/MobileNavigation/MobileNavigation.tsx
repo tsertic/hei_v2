@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React, { useState } from "react";
 import Button from "../../../UI/Button";
 import NavigationItem from "../DesktopNavigation/NavigationItem";
@@ -33,7 +34,12 @@ const MobileNavigation: React.FC<{ showModal: Function }> = ({ showModal }) => {
     <>
       <div className={styles["mobile-navigation"]}>
         <div className={styles["hamburger-container"]} onClick={openNavHandler}>
-          <img src="/assets/images/hamb-menu.svg" alt="menu button icon" />
+          <Image
+            src="/assets/images/hamb-menu.svg"
+            alt="menu button icon"
+            width={48}
+            height={48}
+          />
         </div>
         <Button text="učlani se" link="/membership" />
         {isOpenNav && (
@@ -42,7 +48,12 @@ const MobileNavigation: React.FC<{ showModal: Function }> = ({ showModal }) => {
               className={styles["close-button-container"]}
               onClick={closeNavHandler}
             >
-              <img src="/assets/images/close-icon.svg" alt="close icon" />
+              <Image
+                src="/assets/images/close-icon.svg"
+                alt="close icon"
+                width={48}
+                height={48}
+              />
             </div>
             <ul className={styles["mobile-navigation-list"]}>
               {LINKDATA.map((linkItem) => (
@@ -73,7 +84,12 @@ const MobileNavigation: React.FC<{ showModal: Function }> = ({ showModal }) => {
             </ul>
             <div className={styles["mobile-navigation__language"]}>
               <div className={styles["language-container"]}>
-                <img src="/assets/images/lang-icon.svg" alt="globe icon" />
+                <Image
+                  src="/assets/images/lang-icon.svg"
+                  alt="globe icon"
+                  width={32}
+                  height={32}
+                />
                 <span className={styles["selected-lang"]}>HR</span>
                 <span>EN</span>
               </div>

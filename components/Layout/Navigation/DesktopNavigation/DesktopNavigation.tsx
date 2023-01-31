@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import Button from "../../../UI/Button";
 import styles from "./../Navigation.module.scss";
@@ -45,10 +46,20 @@ export const DesktopNavigation: React.FC<{ showModal: Function }> = ({
             showModal();
           }}
         >
-          <img src="/assets/images/feedback-icon.svg" alt="fedback icon" />
+          <Image
+            src="/assets/images/feedback-icon.svg"
+            alt="fedback icon"
+            width={32}
+            height={32}
+          />
         </div>
         <div className={styles["language-container"]}>
-          <img src="/assets/images/lang-icon.svg" alt="globe icon" />
+          <Image
+            src="/assets/images/lang-icon.svg"
+            alt="globe icon"
+            width={32}
+            height={32}
+          />
           <span className={styles["selected-lang"]}>HR</span>
           <span>EN</span>
         </div>
