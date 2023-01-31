@@ -21,6 +21,8 @@ export const BlogCard: React.FC<{ blogData: any }> = ({ blogData }) => {
     month: "long",
     year: "numeric",
   });
+  console.log(blogData);
+  const blogCardImg = mainImage ? urlFor(mainImage).url() : "";
   return (
     <div className={styles["blog-card"]}>
       <div className={styles["tag-container"]}>
@@ -31,12 +33,7 @@ export const BlogCard: React.FC<{ blogData: any }> = ({ blogData }) => {
         ))}
       </div>
       <div className={styles["img-container"]}>
-        <Image
-          width={560}
-          height={280}
-          src={urlFor(mainImage).url()}
-          alt="blog related"
-        />
+        <Image width={560} height={280} src={blogCardImg} alt="blog related" />
       </div>
       <div className={styles["blog-card__info"]}>
         <p className={styles["date"]}>{formatedDate}</p>

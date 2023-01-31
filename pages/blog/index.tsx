@@ -34,7 +34,8 @@ export default Blog;
 
 export const getStaticProps = async () => {
   const postListData = await client.fetch(`
-    \*[_type=="post"]{
+    \*[_type=="post" && (
+      !(_id in path("drafts.**")))]{
       ...,
       categories[]->,
       author->

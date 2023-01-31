@@ -14,7 +14,7 @@ const BlogPostPage: React.FC<{ post: any }> = ({ post }) => {
       </Wrapper>
     );
   }
-  const mainImage = urlFor(post.mainImage).url();
+  const mainImage = post.mainImage ? urlFor(post.mainImage).url() : "";
   const authorName = post.author.name;
   const title = post.title;
 
