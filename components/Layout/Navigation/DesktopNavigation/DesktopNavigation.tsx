@@ -53,7 +53,7 @@ export const DesktopNavigation: React.FC<{ showModal: Function }> = ({
             height={32}
           />
         </div>
-        <div className={styles["language-container"]}>
+        {/* <div className={styles["language-container"]}>
           <Image
             src="/assets/images/lang-icon.svg"
             alt="globe icon"
@@ -62,7 +62,7 @@ export const DesktopNavigation: React.FC<{ showModal: Function }> = ({
           />
           <span className={styles["selected-lang"]}>HR</span>
           <span>EN</span>
-        </div>
+        </div> */}
         <Button text="uclani se u udrugu" link="/membership" />
       </div>
     </nav>

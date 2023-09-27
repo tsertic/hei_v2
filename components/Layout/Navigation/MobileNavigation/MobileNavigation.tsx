@@ -82,7 +82,7 @@ const MobileNavigation: React.FC<{ showModal: Function }> = ({ showModal }) => {
               />
               <NavigationItem text="faq" linkPath="/faq" />
             </ul>
-            <div className={styles["mobile-navigation__language"]}>
+            {/* <div className={styles["mobile-navigation__language"]}>
               <div className={styles["language-container"]}>
                 <Image
                   src="/assets/images/lang-icon.svg"
@@ -93,7 +93,7 @@ const MobileNavigation: React.FC<{ showModal: Function }> = ({ showModal }) => {
                 <span className={styles["selected-lang"]}>HR</span>
                 <span>EN</span>
               </div>
-            </div>
+            </div> */}
           </div>
         )}
       </div>
